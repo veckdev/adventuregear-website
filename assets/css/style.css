@@ -1,172 +1,246 @@
-/* CSS Variables */
 :root {
-    --page-gutter: 80px;
-    --primary-color: #22a1ba;
-    --secondary-color: #d14426;
-    --light-bg: #f3f3eb;
-    --font-roboto: "Roboto", sans-serif;
-    --font-robotomono: "Roboto Mono", monospace;
-    --overlay-dark: rgba(0, 0, 0, 0.6);
-    --overlay-light: rgba(0, 0, 0, 0.35);
+  --font-main: "Inter", sans-serif;
+  --font-heading: "Inter", sans-serif;
+
+  --dark-brown: #22110d;
+  --forest-2: #2b4a38;
+  --earth: #6b4f3a;
+  --sand: #efebe7;
+  --orange: #ee5a3a;
+  --text: #1f1f1f;
+  --muted: #dcdacb;
+
+  --radius: 18px;
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.10);
 }
 
-/* Base Styles */
+/* Base */
 body {
-    font-family: var(--font-roboto);
-    background-color: var(--light-bg);
-    margin: 0;
+  font-family: var(--font-main);
+  color: var(--text);
+  background-color: #fff;
 }
 
-/* Layout */
-main {
-    padding: 80px 0;
+.section-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: 0.2px;
 }
 
-main section h2 {
-    font-weight: 700;
-    font-size: 3rem;
+.section-text {
+  color: #2c2f33;
+  line-height: 1.6;
 }
 
-main section p {
-    font-size: 1.5rem;
+/* Alt section */
+.light-section {
+  background: var(--sand);
 }
 
-footer {
-    font-family: var(--font-robotomono);
+/* Lists */
+.feature-list {
+  padding-left: 1.1rem;
 }
 
-/* Navigation */
-.navbar-transparent {
-    background-color: transparent;
-    position: absolute;
-    top: 20px;
-    left: 0;
-    right: 0;
-    z-index: 10;
+.feature-list li {
+  margin-bottom: 0.4rem;
 }
 
-.navbar-transparent .container-fluid {
-    padding-left: var(--page-gutter);
-    padding-right: var(--page-gutter);
+/* Navbar */
+.custom-navbar {
+  background: transparent;
+  position: absolute;
+  width: 100%;
+  z-index: 1000;
 }
 
-.navbar-transparent .navbar-brand {
-    font-family: var(--font-roboto);
-    font-weight: 700;
-    font-size: 1.5rem;
-    color: var(--primary-color);
-    padding-left: 0;
+.logo-img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
 }
 
-.navbar-transparent .nav-link {
-    font-family: var(--font-roboto);
-    font-weight: 300;
-    font-size: 1.3rem;
-    color: var(--light-bg);
-    margin-left: -4px;
-    padding: 8px 16px;
-    background-color: var(--primary-color);
-    border-radius: 0;
-    transition: all 0.3s ease;
+.custom-navbar .navbar-brand {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  color: var(--sand);
 }
 
-.navbar-transparent .nav-link:hover {
-    background-color: var(--secondary-color);
+.navbar .nav-link {
+  opacity: 0.9;
 }
 
-/* Hero Section */
-.hero {
-    background: url("../images/freebg.jpeg") center/cover no-repeat;
-    height: 70vh;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    padding: 0 var(--page-gutter) 50px;
-    position: relative;
+.navbar .nav-link:hover {
+  opacity: 1;
+  text-decoration: underline;
 }
 
-.hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom, transparent 0%, var(--overlay-dark) 100%);
-    z-index: 1;
-    pointer-events: none;
+/* Buttons */
+.main-btn {
+  background-color: var(--orange);
+  border: 1px solid var(--orange);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 0.6rem 1rem;
 }
 
-.hero-left,
-.hero-right {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    position: relative;
-    z-index: 2;
+.main-btn:hover {
+  background-color: var(--orange);
+  color: #fff;
 }
 
-.hero-left h1 {
-    font-family: var(--font-roboto);
-    font-weight: 700;
-    font-size: 4rem;
-    color: var(--light-bg);
-    margin: 0;
-    padding-left: 0;
+.outline-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: var(--sand);
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 0.6rem 1rem;
 }
 
-.hero-right {
-    align-items: flex-end;
+.outline-btn:hover {
+  background: rgba(255, 255, 255, 0.10);
 }
 
-.hero-right p {
-    font-family: var(--font-roboto);
-    font-size: 1.5rem;
-    color: var(--light-bg);
-    margin: 0 0 20px 0;
-    text-align: right;
+/* Outline button colors on light backgrounds */
+.light-section .outline-btn,
+.top-banner .outline-btn,
+main .outline-btn {
+  border-color: rgba(31, 58, 45, 0.35);
+  color: var(--forest-2);
 }
 
-/* Shop Cards */
-.shop-card {
-    position: relative;
-    overflow: hidden;
-    height: 520px;
-    border-radius: 12px;
-    cursor: pointer;
+.light-section .outline-btn:hover,
+main .outline-btn:hover {
+  background: rgba(31, 58, 45, 0.06);
 }
 
-.shop-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
+/* Hero */
+.home-hero {
+  position: relative;
+  min-height: 78vh;
+  display: flex;
+  align-items: center;
+  background-image: url("../images/hero.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
-.shop-card:hover img {
-    transform: scale(1.1);
+.home-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
 }
 
-.shop-card-overlay {
-    position: absolute;
-    inset: 0;
-    background: var(--overlay-light);
-    display: flex;
-    align-items: flex-end;
-    padding: 24px;
+.hero-text {
+  position: relative;
+  color: var(--sand);
+  padding: 4rem 0;
 }
 
-.shop-card-overlay h3 {
-    color: var(--light-bg);
-    font-family: var(--font-roboto);
-    font-weight: 700;
-    font-size: 1.8rem;
-    margin: 0;
+.small-label {
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  opacity: 0.9;
+  font-size: 0.9rem;
 }
 
-/* Generic Components */
-.card {
-    transition: transform 0.3s ease;
+.main-heading {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-stretch: 115%;
+  font-size: clamp(2.2rem, 4vw, 3.6rem);
+  margin: 0;
+  color: var(--sand);
 }
 
-.card:hover {
-    transform: scale(1.05);
+.hero-desc {
+  font-size: 1.1rem;
+  max-width: 48ch;
+  opacity: 0.95;
 }
 
+/* Cards */
+.info-box {
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* Product cards */
+.product-box {
+  border: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.product-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+.product-box .card-img-top {
+  height: 190px;
+  object-fit: cover;
+}
+
+/* Price */
+.price-tag {
+  font-weight: 700;
+  color: var(--earth);
+}
+
+.is-hidden {
+  display: none !important;
+}
+
+.filter-btn.active {
+  background: rgba(31, 58, 45, 0.08);
+  border-color: rgba(31, 58, 45, 0.35);
+}
+
+/* Page headers */
+.top-banner {
+  background: var(--earth);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.page-heading {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.page-text {
+  color: var(--muted);
+}
+
+/* Contact Form */
+.error-text {
+  color: #b00020;
+  font-size: 0.9rem;
+  margin-top: 0.35rem;
+}
+
+/* Footer */
+.main-footer {
+  background: var(--dark-brown);
+  color: rgba(255, 255, 255, 0.85);
+  font-family: var(--font-main);
+}
+
+.footer-link {
+  color: var(--sand);
+  text-decoration: none;
+  margin-left: 0.8rem;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+  color: var(--sand);
+}
