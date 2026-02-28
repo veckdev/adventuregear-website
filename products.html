@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AdventureGear Co. Products — camping, clothing and footwear." />
+  <title>AdventureGear Co. | Products</title>
+
+  <!-- Inter Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark custom-navbar sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="index.html">
+        <img src="assets/images/logo.svg" alt="AdventureGear logo" class="logo-img">
+        <span>AdventureGear Co.</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+        aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="products.html" aria-current="page">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item ms-lg-2">
+            <a class="btn main-btn btn-sm" href="products.html">Shop Gear</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="py-5 top-banner">
+    <div class="container">
+      <h1 class="page-heading">Products</h1>
+      <p class="page-text mb-0">
+        Browse our selection of camping, clothing and footwear essentials.
+      </p>
+    </div>
+  </header>
+
+  <main class="py-5">
+    <div class="container">
+      <!-- Filter controls -->
+      <section class="mb-4">
+        <div class="row g-3 align-items-end">
+          <div class="col-lg-7">
+            <h2 class="section-title mb-2">Filter</h2>
+            <div class="d-flex flex-wrap gap-2">
+              <button class="btn outline-btn filter-btn active" type="button" data-filter="all">All</button>
+              <button class="btn outline-btn filter-btn" type="button" data-filter="camping">Camping</button>
+              <button class="btn outline-btn filter-btn" type="button" data-filter="clothing">Clothing</button>
+              <button class="btn outline-btn filter-btn" type="button" data-filter="footwear">Footwear</button>
+            </div>
+          </div>
+
+          <!-- Price range filter -->
+          <div class="col-lg-5">
+            <label for="priceRange" class="form-label fw-semibold mb-1">Price Range</label>
+            <select id="priceRange" class="form-select">
+              <option value="all" selected>All prices</option>
+              <option value="under100">Under €100</option>
+              <option value="100to200">€100 to €200</option>
+              <option value="over200">Over €200</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bootstrap cards -->
+      <section>
+        <div class="row g-4" id="productsGrid">
+          
+          <div class="col-sm-6 col-lg-4 product-item" data-category="camping" data-price="299.99">
+            <div class="card product-box h-100">
+              <img class="card-img-top" src="assets/images/alpine-tent.jpg" alt="Tent">
+              <!-- Photo by cottonbro studio from Pexels: https://www.pexels.com/photo/tent-in-a-forest-5994742/ -->
+              <div class="card-body">
+                <h3 class="card-title h5">Alpine Tent (2-person)</h3>
+                <p class="card-text">Quick setup, breathable mesh, and weather-ready materials.</p>
+                <p class="price-tag mb-0">€299.99</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 product-item" data-category="camping" data-price="79.99">
+            <div class="card product-box h-100">
+              <img class="card-img-top" src="assets/images/sleeping-bag.jpg" alt="Sleeping bag">
+              <!-- Photo by cottonbro studio: https://www.pexels.com/photo/woman-sleeping-inside-a-tent-5994748/ -->
+              <div class="card-body">
+                <h3 class="card-title h5">Trail Sleeping Bag</h3>
+                <p class="card-text">Warm, packable sleeping bag for chilly nights.</p>
+                <p class="price-tag mb-0">€79.99</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 product-item" data-category="camping" data-price="49.99">
+            <div class="card product-box h-100">
+              <img class="card-img-top" src="assets/images/camp-stove.jpg" alt="Camping stove">
+              <!-- Photo by Taryn Elliott from Pexels: https://www.pexels.com/photo/cooking-kit-with-pot-on-rock-4909071/-->
+              <div class="card-body">
+                <h3 class="card-title h5">Compact Camp Stove</h3>
+                <p class="card-text">Fast boil time with simple controls.</p>
+                <p class="price-tag mb-0">€49.99</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 product-item" data-category="camping" data-price="34.99">
+            <div class="card product-box h-100">
+              <img class="card-img-top" src="assets/images/headlamp.jpg" alt="Headlamp">
+              <!-- Photo by Saleh  Bakhshiyev: https://www.pexels.com/photo/kneeling-man-starting-fire-in-a-fireplace-15538110/ -->
+              <div class="card-body">
+                <h3 class="card-title h5">LED Headlamp</h3>
+                <p class="card-text">Bright beam with adjustable strap.</p>
+                <p class="price-tag mb-0">€34.99</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 product-item" data-category="camping" data-price="24.99">
+            <div class="card product-box h-100">
+              <img class="card-img-top" src="assets/images/bottle.jpg" alt="Water bottle">
+              <!-- Photo by Stephen Leonardi: https://www.pexels.com/photo/vibrant-orange-water-bottle-in-nature-setting-35662436/ -->
+              <div class="card-body">
+                <h3 class="card-title h5">Insulated Water Bottle</h3>
+                <p class="card-text">Keeps drinks cold or hot for longer.</p>
+                <p class="price-tag mb-0">€24.99</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 product-item" data-category="clothing" data-price="129.99">
+            <div class="card product-box h-100">
+              <img class="card-img-top" src="assets/images/jacket.jpg" alt="Jacket">
+              <!-- Photo by Life  Folk: https://www.pexels.com/photo/person-wearing-yellow-zip-up-hooded-jacket-3365796/ -->
+              <div class="card-body">
+                <h3 class="card-title h5">StormShell Jacket</h3>
+                <p class="card-text">Water-resistant shell for wet and windy days.</p>
+                <p class="price-tag mb-0">€129.99</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 product-item" data-category="clothing" data-price="59.99">
+            <div class="card product-box h-100">
+              <img class="card-img-top" src="assets/images/backpack.jpg" alt="Backpack">
+              <!-- Photo by Ali Kazal from Pexels: https://www.pexels.com/photo/man-in-blue-jacket-carrying-a-backpack-10771804/ -->
+              <div class="card-body">
+                <h3 class="card-title h5">Orange Backpack</h3>
+                <p class="card-text">Large capacity with multiple compartments.</p>
+                <p class="price-tag mb-0">€59.99</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 product-item" data-category="clothing" data-price="39.99">
+            <div class="card product-box h-100">
+              <img class="card-img-top" src="assets/images/base-layer.jpg" alt="Base layer">
+              <!-- Photo by Gabriela Palai: https://www.pexels.com/photo/person-wearing-blue-hoodie-near-body-of-water-433142/ -->
+              <div class="card-body">
+                <h3 class="card-title h5">Thermal Base Layer</h3>
+                <p class="card-text">Breathable, comfortable, and easy to move in.</p>
+                <p class="price-tag mb-0">€39.99</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 product-item" data-category="clothing" data-price="74.99">
+            <div class="card product-box h-100">
+              <img class="card-img-top" src="assets/images/hiking-pants.jpg" alt="Hiking pants">
+              <div class="card-body">
+                <h3 class="card-title h5">Hiking Pants</h3>
+                <p class="card-text">Durable fabric with stretch for comfort.</p>
+                <p class="price-tag mb-0">€74.99</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 product-item" data-category="clothing" data-price="19.99">
+            <div class="card product-box h-100">
+              <img class="card-img-top" src="assets/images/socks.jpg" alt="Socks">
+              <!-- Photo by Sefa from Pexels: https://www.pexels.com/photo/feet-in-nordic-pattern-socks-against-sunset-sky-15948085/ -->
+              <div class="card-body">
+                <h3 class="card-title h5">Merino Hiking Socks</h3>
+                <p class="card-text">Comfortable socks for long walking days.</p>
+                <p class="price-tag mb-0">€19.99</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 product-item" data-category="footwear" data-price="149.99">
+            <div class="card product-box h-100">
+              <img class="card-img-top" src="assets/images/hiking-boots.jpg" alt="Hiking boots">
+              <!-- Photo by Marta Wave: https://www.pexels.com/photo/unrecognizable-person-walking-on-stones-near-water-5875910/ -->
+              <div class="card-body">
+                <h3 class="card-title h5">Ridge Hiking Boots</h3>
+                <p class="card-text">Supportive boots with strong grip.</p>
+                <p class="price-tag mb-0">€149.99</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 product-item" data-category="footwear" data-price="99.99">
+            <div class="card product-box h-100">
+              <img class="card-img-top" src="assets/images/trail-shoes.jpg" alt="Trail shoes">
+              <!-- Photo by the happiest face: https://www.pexels.com/photo/photo-of-man-sitting-on-the-cliff-1033849/ -->
+              <div class="card-body">
+                <h3 class="card-title h5">Trail Running Shoes</h3>
+                <p class="card-text">Light and quick for faster hikes.</p>
+                <p class="price-tag mb-0">€99.99</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 product-item" data-category="footwear" data-price="29.99">
+            <div class="card product-box h-100">
+              <img class="card-img-top" src="assets/images/sandals.jpg" alt="Sandals">
+              <!-- Photo by Alfin Auzikri: https://www.pexels.com/photo/person-standing-on-wet-stone-ground-in-wildlife-5539960/ -->
+              <div class="card-body">
+                <h3 class="card-title h5">Camp Sandals</h3>
+                <p class="card-text">Easy slip-on comfort after a long trail.</p>
+                <p class="price-tag mb-0">€29.99</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 product-item" data-category="camping" data-price="29.99">
+            <div class="card product-box h-100">
+              <img class="card-img-top" src="assets/images/lamp.jpg" alt="Lamp">
+              <!-- Photo by kwnos  Iv: https://www.pexels.com/photo/a-man-sitting-on-a-rock-with-a-camera-in-front-of-him-15782528/ -->
+              <div class="card-body">
+                <h3 class="card-title h5">Lamp</h3>
+                <p class="card-text">Portable lighting for campsite use.</p>
+                <p class="price-tag mb-0">€29.99</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 product-item" data-category="camping" data-price="59.99">
+            <div class="card product-box h-100">
+              <img class="card-img-top" src="assets/images/mattress.jpg" alt="Trekking Mattress">
+              <!-- Photo by Thirdman: https://www.pexels.com/photo/man-in-yellow-sweater-and-gray-pants-sitting-on-brown-soil-5051868/ -->
+              <div class="card-body">
+                <h3 class="card-title h5">Trekking Mattress</h3>
+                <p class="card-text">Comfortable and lightweight for outdoor sleeping.</p>
+                <p class="price-tag mb-0">€59.99</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-4 main-footer">
+    <div class="container">
+      <div class="row g-3 align-items-center">
+        <div class="col-md-6">
+          <p class="mb-0 small">
+            © <span id="year"></span> AdventureGear Co.
+          </p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <a class="footer-link" href="index.html">Home</a>
+          <a class="footer-link" href="products.html">Products</a>
+          <a class="footer-link" href="contact.html">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- External JS -->
+  <script src="assets/js/script.js"></script>
+</body>
+
+</html>
